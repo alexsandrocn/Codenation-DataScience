@@ -1,0 +1,9 @@
+aceleradev_ds/
+data-science-0/
+venv/
+.idea/
+requirements.txt
+coestatistica-1/desafio1.csv
+coestatistica-1/.gitignore
+.gitignore
+
