@@ -5,4 +5,5 @@ venv/
 .gitignore
 streamlit-ds
 backup
+data-science-1/requirements.txt
 
