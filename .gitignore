@@ -1,9 +1,10 @@
 aceleradev_ds/
-data-science-0
 venv/
 .idea/
 .gitignore
 streamlit-ds
 backup
 data-science-1/requirements.txt
+Modulo-5/
+data-science-2/test_main.py
 

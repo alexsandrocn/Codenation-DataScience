@@ -80,7 +80,15 @@ dataframe.describe()
 # In[7]:
 
 
-dataframe[["normal", "binomial"]].plot(bins=100, kind="hist", subplots=True)
+sns.distplot(dataframe['normal'], label = 'normal', color= 'm', kde=True, hist_kws = {'alpha' : 0.4})
+plt.show()
+
+
+# In[25]:
+
+
+sns.distplot(dataframe['binomial'], label = 'binomial',bins = range(6, 36),color= 'black', kde=True, hist_kws = {'alpha' : 0.5})
+plt.show()
 
 
 # Para refletir:
@@ -95,20 +103,15 @@ dataframe[["normal", "binomial"]].plot(bins=100, kind="hist", subplots=True)
 # 
 # Em outra palavras, sejam `q1_norm`, `q2_norm` e `q3_norm` os quantis da variável `normal` e `q1_binom`, `q2_binom` e `q3_binom` os quantis da variável `binom`, qual a diferença `(q1_norm - q1 binom, q2_norm - q2_binom, q3_norm - q3_binom)`?
 
-# In[8]:
+# In[12]:
 
 
 def q1():
     # Retorne aqui o resultado da questão 1.
-    q1_norm = np.percentile(dataframe.normal, 25)
-    q2_norm = np.percentile(dataframe.normal, 50)
-    q3_norm = np.percentile(dataframe.normal, 75)
-    q1_binom = np.percentile(dataframe.binomial, 25)
-    q2_binom = np.percentile(dataframe.binomial, 50)
-    q3_binom = np.percentile(dataframe.binomial, 75)
-    results = tuple(pd.Series([q1_norm - q1_binom, q2_norm - q2_binom, q3_norm - q3_binom]).round(3))
-    
-    return results
+    q1_dif = dataframe['normal'].quantile(0.25) - dataframe['binomial'].quantile(0.25)
+    q2_dif = dataframe['normal'].quantile(0.50) - dataframe['binomial'].quantile(0.50)
+    q3_dif = dataframe['normal'].quantile(0.75) - dataframe['binomial'].quantile(0.75)
+    return (q1_dif.round(3), q2_dif.round(3), q3_dif.round(3))
 q1()
 
 
@@ -116,7 +119,7 @@ q1()
 # 
 # Considere o intervalo $[\bar{x} - s, \bar{x} + s]$, onde $\bar{x}$ é a média amostral e $s$ é o desvio padrão. Qual a probabilidade nesse intervalo, calculada pela função de distribuição acumulada empírica (CDF empírica) da variável `normal`? Responda como uma único escalar arredondado para três casas decimais.
 
-# In[9]:
+# In[13]:
 
 
 def q2():
@@ -146,7 +149,7 @@ q2()
 # 
 # Em outras palavras, sejam `m_binom` e `v_binom` a média e a variância da variável `binomial`, e `m_norm` e `v_norm` a média e a variância da variável `normal`. Quais as diferenças `(m_binom - m_norm, v_binom - v_norm)`?
 
-# In[10]:
+# In[14]:
 
 
 def q3():
@@ -172,7 +175,7 @@ q3()
 
 # ### _Setup_ da parte 2
 
-# In[12]:
+# In[15]:
 
 
 stars = pd.read_csv("pulsar_stars.csv")
@@ -189,7 +192,7 @@ stars.loc[:, "target"] = stars.target.astype(bool)
 
 # ## Inicie sua análise da parte 2 a partir daqui
 
-# In[13]:
+# In[16]:
 
 
 # Sua análise da parte 2 começa aqui.
@@ -197,7 +200,7 @@ print(stars.shape)
 stars.head()
 
 
-# In[14]:
+# In[17]:
 
 
 stars.describe()
