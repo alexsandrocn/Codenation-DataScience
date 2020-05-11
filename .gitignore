@@ -12,5 +12,9 @@ data-science-1/.pytest_cache/
 data-science-1/stdout.txt
 data-science-1/.ipynb_checkpoints
 data-science-1/__init__.py
+data-science-0/venv/
+data-science-0/__pycache__/
+
+
 
 
