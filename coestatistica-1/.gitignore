@@ -1,8 +1,0 @@
-#Ignora cache do python
-.idea/
-.ipynb_checkpoints/
-__init__.py
-stdout.txt
-submission.json
-venv/
-
