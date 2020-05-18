@@ -1,0 +1,34 @@
+============================= test session starts ==============================
+platform linux -- Python 3.6.9, pytest-4.6.2, py-1.8.0, pluggy-0.12.0 -- /home/alexsandro/codenation/data-science-2/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /home/alexsandro/codenation/data-science-2
+collecting ... collected 7 items
+
+test_submit.py::test_q1 PASSED                                           [ 14%]
+test_submit.py::test_q2 PASSED                                           [ 28%]
+test_submit.py::test_q3 PASSED                                           [ 42%]
+test_submit.py::test_q4 PASSED                                           [ 57%]
+test_submit.py::test_q5 PASSED                                           [ 71%]
+test_submit.py::test_q6 PASSED                                           [ 85%]
+test_submit.py::test_q7 PASSED                                           [100%]
+
+=============================== warnings summary ===============================
+main.py:131
+  /home/alexsandro/codenation/data-science-2/main.py:131: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
+    plt.show()
+
+main.py:144
+  /home/alexsandro/codenation/data-science-2/main.py:144: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
+    plt.show()
+
+main.py:198
+  /home/alexsandro/codenation/data-science-2/main.py:198: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
+    plt.show()
+
+main.py:233
+  /home/alexsandro/codenation/data-science-2/main.py:233: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
+    plt.show()
+
+-- Docs: https://docs.pytest.org/en/latest/warnings.html
+-- generated xml file: /home/alexsandro/codenation/data-science-2/output.xml ---
+===================== 7 passed, 4 warnings in 4.77 seconds =====================
